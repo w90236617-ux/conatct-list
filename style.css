@@ -1,0 +1,380 @@
+/* ==========================================
+   CSS Variables for Theme Switching
+   ========================================== */
+:root {
+    /* Light Mode Colors */
+    --bg-gradient-1: #f0f4f8;
+    --bg-gradient-2: #d9e2ec;
+    --card-bg: #ffffff;
+    --text-primary: #334e68;
+    --text-secondary: #627d98;
+    --text-muted: #829ab1;
+    --input-bg: #f0f4f8;
+    --shadow-light: #ffffff;
+    --shadow-dark: #c8d4e0;
+    --border-color: #e2e8f0;
+}
+
+/* Dark Mode Colors */
+body.dark-mode {
+    --bg-gradient-1: #1a202c;
+    --bg-gradient-2: #2d3748;
+    --card-bg: #2d3748;
+    --text-primary: #f7fafc;
+    --text-secondary: #cbd5e0;
+    --text-muted: #a0aec0;
+    --input-bg: #4a5568;
+    --shadow-light: #4a5568;
+    --shadow-dark: #171923;
+    --border-color: #4a5568;
+}
+
+/* ==========================================
+   Global Styles
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, var(--bg-gradient-1) 0%, var(--bg-gradient-2) 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    transition: all 0.3s ease;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+}
+
+/* ==========================================
+   Header Section
+   ========================================== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.main-title {
+    color: var(--text-primary);
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    transition: color 0.3s ease;
+}
+
+/* Theme Toggle Button */
+.theme-btn {
+    background: var(--card-bg);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-btn:hover {
+    transform: rotate(20deg) scale(1.1);
+}
+
+.theme-btn:active {
+    box-shadow: inset 2px 2px 4px var(--shadow-dark), inset -2px -2px 4px var(--shadow-light);
+}
+
+/* ==========================================
+   3D Card Design
+   ========================================== */
+.card-3d {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 
+        10px 10px 20px var(--shadow-dark), 
+        -10px -10px 20px var(--shadow-light);
+    transition: all 0.3s ease;
+}
+
+.card-3d:hover {
+    transform: translateY(-3px);
+}
+
+.card-title {
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+/* ==========================================
+   Input Fields
+   ========================================== */
+.input-box {
+    margin-bottom: 20px;
+}
+
+.input-box label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 10px;
+    background: var(--input-bg);
+    box-shadow: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light);
+    outline: none;
+    font-size: 1rem;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+/* ==========================================
+   3D Buttons
+   ========================================== */
+.btn-3d {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Add Button */
+.btn-add {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    box-shadow: 0 6px 0 #007bff, 0 8px 10px rgba(0,0,0,0.1);
+}
+
+.btn-add:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 0 #007bff, 0 12px 15px rgba(0,0,0,0.15);
+}
+
+.btn-add:active {
+    transform: translateY(6px);
+    box-shadow: 0 0px 0 #007bff;
+}
+
+/* Update Button */
+.btn-update {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    box-shadow: 0 6px 0 #28a745, 0 8px 10px rgba(0,0,0,0.1);
+}
+
+.btn-update:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 0 #28a745, 0 12px 15px rgba(0,0,0,0.15);
+}
+
+.btn-update:active {
+    transform: translateY(6px);
+    box-shadow: 0 0px 0 #28a745;
+}
+
+/* Cancel Button */
+.btn-cancel {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    box-shadow: 0 6px 0 #e83e8c, 0 8px 10px rgba(0,0,0,0.1);
+}
+
+.btn-cancel:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 0 #e83e8c, 0 12px 15px rgba(0,0,0,0.15);
+}
+
+.btn-cancel:active {
+    transform: translateY(6px);
+    box-shadow: 0 0px 0 #e83e8c;
+}
+
+/* ==========================================
+   Search Bar
+   ========================================== */
+.search-container {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    border: none;
+    border-radius: 15px;
+    background: var(--card-bg);
+    box-shadow: 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light);
+    outline: none;
+    font-size: 1rem;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.search-container input:focus {
+    box-shadow: 8px 8px 16px var(--shadow-dark), -8px -8px 16px var(--shadow-light);
+}
+
+/* ==========================================
+   Contact List Section
+   ========================================== */
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.list-header h2 {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.count-badge {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+/* ==========================================
+   Individual Contact Card
+   ========================================== */
+.contact-item {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light);
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: scale(1.02);
+    box-shadow: 8px 8px 16px var(--shadow-dark), -8px -8px 16px var(--shadow-light);
+}
+
+.contact-info h3 {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.contact-info p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+/* Icon Buttons for Edit/Delete */
+.icon-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.1s;
+}
+
+.icon-btn:hover {
+    transform: scale(1.1);
+}
+
+.btn-edit {
+    background: linear-gradient(135deg, #ffce00 0%, #ff9500 100%);
+    box-shadow: 0 4px 0 #d4a000;
+}
+
+.btn-edit:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 #d4a000;
+}
+
+.btn-delete {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+    box-shadow: 0 4px 0 #d63031;
+}
+
+.btn-delete:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 #d63031;
+}
+
+.loading-text {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    padding: 20px;
+    transition: color 0.3s ease;
+}
+
+/* ==========================================
+   Responsive Design
+   ========================================== */
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 1.5rem;
+    }
+    
+    .card-3d {
+        padding: 20px;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}

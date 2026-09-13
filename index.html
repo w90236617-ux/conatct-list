@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact List</title>
+    
+    <!-- CSS File Link -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Main Container -->
+    <div class="container">
+        
+        <!-- Header Section -->
+        <div class="header">
+            <h1 class="main-title">
+                <i class="fas fa-address-book"></i> Contact List
+            </h1>
+            
+            <!-- Dark Mode Toggle Button - ID changed for better targeting -->
+            <button id="themeToggleBtn" class="theme-btn" title="Toggle Theme">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+
+        <!-- Add Contact Form Card -->
+        <div class="card-3d form-card">
+            <h2 class="card-title">Add New Contact</h2>
+            
+            <!-- Hidden input for storing contact ID during edit -->
+            <input type="hidden" id="contactId">
+            
+            <!-- Username Input -->
+            <div class="input-box">
+                <label>Username</label>
+                <input type="text" id="username" placeholder="Enter username (e.g Ali)">
+            </div>
+            
+            <!-- Email Input -->
+            <div class="input-box">
+                <label>Email</label>
+                <input type="email" id="email" placeholder="Enter email (e.g ali@gmail.com)">
+            </div>
+
+            <!-- Action Buttons -->
+            <button id="addBtn" class="btn-3d btn-add">
+                <i class="fas fa-plus"></i> Add Contact
+            </button>
+            
+            <button id="updateBtn" class="btn-3d btn-update" style="display:none;">
+                <i class="fas fa-save"></i> Update Contact
+            </button>
+            
+            <button id="cancelBtn" class="btn-3d btn-cancel" style="display:none;">
+                <i class="fas fa-times"></i> Cancel
+            </button>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="searchInput" placeholder="Search contacts...">
+        </div>
+
+        <!-- Contacts List Header -->
+        <div class="list-header">
+            <h2>Your Contacts</h2>
+            <span id="contactCount" class="count-badge">0</span>
+        </div>
+        
+        <!-- Contact List Container -->
+        <div id="contactListContainer">
+            <p class="loading-text">Loading contacts...</p>
+        </div>
+    </div>
+<script src="https://www.gstatic.com/firebasejs/12.16.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.16.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.16.0/firebase-database-compat.js"></script>
+
+  <script>
+      const firebaseConfig = {
+  apiKey: "AIzaSyAGMHskjoJvROJgqP8lkZ4soA9Y2q-8GN8",
+  authDomain: "hackathon-29486.firebaseapp.com",
+  databaseURL: "https://hackathon-29486-default-rtdb.firebaseio.com",
+  projectId: "hackathon-29486",
+  storageBucket: "hackathon-29486.firebasestorage.app",
+  messagingSenderId: "541925468615",
+  appId: "1:541925468615:web:1d662a3e7dfbc66f9551e2",
+  measurementId: "G-1C6EN8ZEVQ"
+};
+firebase.initializeApp(firebaseConfig)
+  </script>
+
+    <!-- JS File Link -->
+    <script src="script.js"></script>
+</body>
+</html>
